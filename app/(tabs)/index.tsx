@@ -31,7 +31,11 @@ export default function HomeScreen() {
         <TouchableOpacity>
           <Text style={styles.forgotPassword}>Forgot Passwprd?</Text>
         </TouchableOpacity>
-        <View style={styles.divider}/>
+        <View style={styles.divider}>
+          <View style={styles.line} />
+            <Text style={styles.text}>Or</Text>
+          <View style={styles.line} />
+        </View>
         <TouchableOpacity style={styles.createAccountButton}>
           <Text style={styles.createAccountText}>Create New Account</Text>
         </TouchableOpacity>
@@ -39,7 +43,7 @@ export default function HomeScreen() {
 
       {/* Footer */}
       <View style={styles.footer}>
-        <Text style={styles.footerText}>© 2024 Facebook</Text>
+        <Text style={styles.footerText}>Meta © 2024</Text>
       </View>
     </SafeAreaView>
   );
@@ -97,9 +101,19 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   divider: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 16,
+  },
+  line: {
+    flex: 1,
     height: 1,
-    backgroundColor: '#ddd',
-    marginVertical: 20,
+    backgroundColor: '#ccc',
+  },
+  text: {
+    marginHorizontal: 8,
+    fontSize: 16,
+    color: '#555',
   },
   createAccountButton: {
     backgroundColor: '#42b72a',
@@ -111,6 +125,12 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
+  },
+  about: {
+    alignItems: 'center',
+    display: 'flex',
+    flexDirection: 'row',
+    gap: '15px',
   },
   footer: {
     marginTop: 50,
